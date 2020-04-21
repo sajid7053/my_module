@@ -15,7 +15,7 @@ class MyModuleForm extends FormBase {
 
  
   public function buildForm(array $form, FormStateInterface $form_state) {
-	$list = array(0 => 'Select' , 1 => 'Article' , 2 => 'Basic page');
+    $list = array(0 => 'Select' , 1 => 'Article' , 2 => 'Basic page');
     $node = \Drupal::routeMatch()->getParameter('node');
     $nid = $node->nid->value;
     $form['NODES'] = array(
@@ -47,16 +47,16 @@ class MyModuleForm extends FormBase {
 	$x=1;
 	while($x <= $value {
 	  $node = Node::create(array(
-      'type' => 'your_content_type',
-      'title' => 'your title',
-      'langcode' => 'en',
-      'uid' => '1',
-      'status' => 1,
-      'field_fields' => array(),
-      ));
+          'type' => 'your_content_type',
+          'title' => 'your title',
+          'langcode' => 'en',
+          'uid' => '1',
+          'status' => 1,
+          'field_fields' => array(),
+          ));
 
-      $node->save();
-      $x++;
+          $node->save();
+          $x++;
     }
   }
 }
