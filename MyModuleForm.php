@@ -15,7 +15,7 @@ class MyModuleForm extends FormBase {
 
  
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $list = array(0 => 'Select' , 1 => 'Article' , 2 => 'Basic page');
+	$list = array(0 => 'Select' , 1 => 'Article' , 2 => 'Basic page');
     $node = \Drupal::routeMatch()->getParameter('node');
     $nid = $node->nid->value;
     $form['NODES'] = array(
@@ -40,23 +40,22 @@ class MyModuleForm extends FormBase {
     return $form;
   }
 
-  public function createnode($form, &$form_state){
-    $node = Node::create(array(
-    'type' => 'Article',
-    'title' => 'your title',
-    'langcode' => 'en',
-    'uid' => '1',
-    'status' => 1,
-    'field_fields' => array(),
-    ));
-    $node->save();
-  }
+  
   public function submitForm(array &$form, FormStateInterface $form_state) {
     drupal_set_message(t('This is working.'));
 	$value = $form_state->getValue('NODES');
 	$x=1;
 	while($x <= $value {
-	  createnode();
+	  $node = Node::create(array(
+      'type' => 'your_content_type',
+      'title' => 'your title',
+      'langcode' => 'en',
+      'uid' => '1',
+      'status' => 1,
+      'field_fields' => array(),
+      ));
+
+      $node->save();
       $x++;
     }
   }
