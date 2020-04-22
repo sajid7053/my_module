@@ -4,4 +4,4 @@ my_module.form:
     _form: '\Drupal\my_module\Form\MyModuleForm'
     _title: 'Nodes'
   requirements:
-    _permission: 'access content'
+    _permission: 'Administrator'
