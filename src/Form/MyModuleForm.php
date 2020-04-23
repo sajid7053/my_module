@@ -52,7 +52,7 @@ class MyModuleForm extends FormBase {
               'status' => 1,
               'field_fields' => array(),
             ]);
-			$node->save();
+	    $node->save();
 	  $x++; 
     }
 	$this->messenger()->addMessage('Success');
